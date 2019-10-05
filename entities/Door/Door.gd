@@ -1,16 +1,10 @@
 extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-export var signal_to_follow: String
 export var initial_state: String = "closed" # "closed" or "opened"
 
 var is_opened: bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	connect(signal_to_follow, self, "_on_switch_signal")
-	
 	if initial_state == "closed":
 		close()
 	elif initial_state == "opened":

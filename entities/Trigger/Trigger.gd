@@ -3,15 +3,20 @@ extends Node2D
 
 export var TIME_TO_ACTIVATION: float = 3.0
 export var DECREASE_SPEED: float = 0.1 # percent
+var signal_to_emit: String
 var progression: float
 
 var triggered: bool
 var enlightened: bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	signal_to_emit = ""
 	triggered = false
 	enlightened = false
 	$Light2D.set_enabled(false)
+
+func set_signal_to_emit(name: String):
+	signal_to_emit = name
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -23,7 +28,8 @@ func _process(delta):
 	else:
 		progression +=  delta
 		if progression > TIME_TO_ACTIVATION: 
-			print("Triggered !")
+			if signal_to_emit.length() != 0:
+				get_parent().emit_signal(signal_to_emit)
 			triggered = true
 
 
