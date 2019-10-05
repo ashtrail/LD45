@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://utility/BGMFadeLooper/BGMFadeLooper.gd" type="Script" id=1]
+
+[node name="BGMFadeLooper" type="Node2D"]
+script = ExtResource( 1 )
+fadeout_a = 6.0
+fadeout_b = 5.0
+
+[node name="PlayerA" type="AudioStreamPlayer" parent="."]
+volume_db = 3.0
+
+[node name="FirstPlayerB" type="AudioStreamPlayer" parent="."]
+volume_db = 3.0
+
+[node name="SecondPlayerB" type="AudioStreamPlayer" parent="."]
+volume_db = 3.0
+
+[node name="FadeOutA" type="Timer" parent="."]
+one_shot = true
+
+[node name="FadeOutB" type="Timer" parent="."]
+one_shot = true
+[connection signal="finished" from="PlayerA" to="." method="_on_PlayerA_finished"]
+[connection signal="finished" from="FirstPlayerB" to="." method="_on_FirstPlayerB_finished"]
+[connection signal="finished" from="SecondPlayerB" to="." method="_on_SecondPlayerB_finished"]
+[connection signal="timeout" from="FadeOutA" to="." method="_on_FadeOutA_timeout"]
+[connection signal="timeout" from="FadeOutB" to="." method="_on_FadeOutB_timeout"]
