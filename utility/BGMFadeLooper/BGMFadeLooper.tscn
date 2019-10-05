@@ -21,6 +21,7 @@ one_shot = true
 
 [node name="FadeOutB" type="Timer" parent="."]
 one_shot = true
+
 [connection signal="finished" from="PlayerA" to="." method="_on_PlayerA_finished"]
 [connection signal="finished" from="FirstPlayerB" to="." method="_on_FirstPlayerB_finished"]
 [connection signal="finished" from="SecondPlayerB" to="." method="_on_SecondPlayerB_finished"]

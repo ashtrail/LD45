@@ -8,7 +8,9 @@
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
 position = Vector2( 540.205, 363.41 )
 rotation = -0.44826
 script = ExtResource( 1 )
@@ -25,7 +27,9 @@ shape = SubResource( 1 )
 [node name="Light" type="Area2D" parent="."]
 rotation = 4.68976
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Light"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Light" groups=[
+"light_cone",
+]]
 position = Vector2( 0.418121, 122.091 )
 scale = Vector2( 9.94486, 12.3486 )
 shape = SubResource( 2 )
@@ -37,3 +41,4 @@ scale = Vector2( 1.92654, 0.964087 )
 [node name="Cone" type="Sprite" parent="Light/Sprite"]
 position = Vector2( 3.0303, 93.3168 )
 texture = ExtResource( 3 )
+
