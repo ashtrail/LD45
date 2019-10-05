@@ -4,6 +4,7 @@ var mouse_position
 var movement
 
 func _ready():
+	$Camera2D/Narator._appendText("Bonjour, ça va ? Moi non...\n J'ai mal a mon estime de moi...")
 	pass
 
 func _process(delta):

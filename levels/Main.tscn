@@ -16,4 +16,3 @@ position = Vector2( 509.399, 209.372 )
 
 [node name="Trigger" parent="." instance=ExtResource( 4 )]
 position = Vector2( 902.014, 502.128 )
-

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://entities/WhiteGhost/WhiteGhost.gd" type="Script" id=1]
 [ext_resource path="res://entities/WhiteGhost/white_ghost.png" type="Texture" id=2]
+[ext_resource path="res://entities/LightHandler/round_mask.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 33.9303
@@ -22,5 +23,9 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
 
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 0.160001, -0.280001 )
+texture = ExtResource( 3 )
+color = Color( 0.309804, 0.309804, 0.309804, 1 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

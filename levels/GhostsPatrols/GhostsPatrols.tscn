@@ -33,4 +33,3 @@ position = Vector2( 188.029, 18.8836 )
 rotate = false
 
 [node name="Node2D2" parent="Path2D2/PathFollow2D" instance=ExtResource( 2 )]
-
