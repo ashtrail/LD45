@@ -7,8 +7,8 @@ func _ready():
 	pass
 
 func _process(delta):
-	mouse_position = get_local_mouse_position()
-	rotation += mouse_position.angle()*0.1
+	mouse_position = $FlashLight.get_local_mouse_position()
+	$FlashLight.rotation += mouse_position.angle()*0.1
 	movement = Vector2(0, 0)
 	if (Input.is_action_pressed("ui_up")):
 		movement += Vector2(0, -1)
