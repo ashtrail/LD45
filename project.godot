@@ -23,6 +23,10 @@ _global_script_class_icons={
 config/name="LD45"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://global/Global.gd"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
