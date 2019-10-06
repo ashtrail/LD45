@@ -8,5 +8,3 @@ rotate = false
 script = ExtResource( 1 )
 
 [node name="Ghost" parent="." instance=ExtResource( 2 )]
-position = Vector2( 124.042, 218.55 )
-

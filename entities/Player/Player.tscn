@@ -37,5 +37,4 @@ scale = Vector2( 23.7849, 29.3086 )
 shape = SubResource( 2 )
 
 [node name="Node2D" parent="FlashLight" instance=ExtResource( 3 )]
-position = Vector2( -0.0516109, 1.15967 )
-
+position = Vector2( -0.568817, 5.68799 )

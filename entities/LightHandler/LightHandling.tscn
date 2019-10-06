@@ -22,12 +22,15 @@ tracks/0/keys = {
 }
 
 [node name="Node2D" type="Node2D"]
+light_mask = 0
 
 [node name="ConeLight" type="Light2D" parent="."]
-position = Vector2( 248.121, -1.4702 )
+light_mask = 0
+position = Vector2( 248.121, -1 )
 scale = Vector2( 0.44, 0.4 )
 texture = ExtResource( 1 )
 mode = 2
+range_item_cull_mask = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ConeLight"]
 autoplay = "ConeLight"

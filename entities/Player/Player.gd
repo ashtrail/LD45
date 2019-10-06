@@ -20,5 +20,5 @@ func _process(delta):
 	if (Input.is_action_pressed("ui_left")):
 		movement += Vector2(-1, 0)
 	movement.normalized()
-	move_and_collide(movement * 2)
+	move_and_collide(movement * 9)
 	pass
