@@ -14,6 +14,10 @@ radius = 10.5898
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 13.4316
+height = 34.3047
+
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
@@ -26,8 +30,8 @@ scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 2 )
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.121659, 13.1928 )
+[node name="CollisionShapePhysic" type="CollisionShape2D" parent="."]
+scale = Vector2( 2.44, 2.48 )
 shape = SubResource( 1 )
 
 [node name="FlashLight" type="Node2D" parent="."]
@@ -61,3 +65,11 @@ position = Vector2( -0.716965, 1.43394 )
 scale = Vector2( 2, 2 )
 z_index = -1
 texture = ExtResource( 5 )
+position = Vector2( -0.568817, 5.68799 )
+
+[node name="AreaTrigeredByEnemy" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTrigeredByEnemy"]
+shape = SubResource( 3 )
+
+[connection signal="area_entered" from="AreaTrigeredByEnemy" to="." method="_on_AreaTrigeredByEnemy_area_entered"]
