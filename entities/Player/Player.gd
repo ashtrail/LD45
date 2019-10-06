@@ -22,3 +22,9 @@ func _process(delta):
 	movement.normalized()
 	move_and_collide(movement * 9)
 	pass
+
+
+func _on_AreaTrigeredByEnemy_area_entered(area):
+	if area.is_in_group("enemy"):
+		print("Hit by an enemy")
+	pass # Replace with function body.
