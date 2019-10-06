@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Br-Fantome-006.ogg-bbe92418c778878e59368ad8afc31cc2.oggstr"
+
+[deps]
+
+source_file="res://musics&sounds/Bruitages/Fantômes/Br-Fantome-006.ogg"
+dest_files=[ "res://.import/Br-Fantome-006.ogg-bbe92418c778878e59368ad8afc31cc2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

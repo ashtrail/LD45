@@ -1,16 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://entities/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://entities/Player/player.png" type="Texture" id=2]
 [ext_resource path="res://entities/LightHandler/LightHandling.tscn" type="PackedScene" id=3]
+[ext_resource path="res://global/Camera2D.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/LightHandler/round_mask.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 5.83532
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="CircleShape2D" id=2]
+radius = 10.5898
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource( 1 )
 
 [node name="icon" type="Sprite" parent="."]
@@ -19,22 +27,37 @@ texture = ExtResource( 2 )
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 2.44, 2.48 )
+position = Vector2( -0.121659, 13.1928 )
 shape = SubResource( 1 )
 
 [node name="FlashLight" type="Node2D" parent="."]
-position = Vector2( 0.235241, -0.0158501 )
 
 [node name="Light" type="Area2D" parent="FlashLight" groups=[
+"light_cone",
 "flash_light",
 ]]
-position = Vector2( -0.0460062, 0.16563 )
+position = Vector2( -0.369537, 1.13623 )
 rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FlashLight/Light"]
-position = Vector2( -3.25959, 298.605 )
-scale = Vector2( 23.7849, 29.3086 )
+position = Vector2( 0, 275.39 )
+scale = Vector2( 7, 7 )
 shape = SubResource( 2 )
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FlashLight/Light"]
+position = Vector2( -0.869837, 168.118 )
+scale = Vector2( 7.91963, 15.6269 )
+shape = SubResource( 3 )
+
 [node name="Node2D" parent="FlashLight" instance=ExtResource( 3 )]
-position = Vector2( -0.568817, 5.68799 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
+position = Vector2( -0.716965, 1.43394 )
+scale = Vector2( 2, 2 )
+z_index = -1
+texture = ExtResource( 5 )

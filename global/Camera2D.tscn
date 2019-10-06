@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Narator.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entities/LightHandler/round_mask.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "LightRound"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 0.392292, 1.93187 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.31, 0.31 ), Vector2( 0.3, 0.3 ) ]
+}
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2( -0.685333, -0.11084 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+
+[node name="Narator" parent="." instance=ExtResource( 1 )]
+margin_left = -490.898
+margin_top = -271.245
+margin_right = 509.102
+margin_bottom = -189.245
+scroll_active = false
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+show_behind_parent = true
+light_mask = 3
+position = Vector2( 0.685333, 0.11084 )
+scale = Vector2( 0.109106, 0.119879 )
+z_as_relative = false
+texture = ExtResource( 2 )
+mode = 2
+range_z_min = -1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Light2D"]
+autoplay = "LightRound"
+anims/LightRound = SubResource( 1 )

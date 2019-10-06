@@ -1,61 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://entities/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/LightHandler/round_mask.png" type="Texture" id=2]
-[ext_resource path="res://Narator.tscn" type="PackedScene" id=3]
-
-[sub_resource type="Animation" id=1]
-resource_name = "LightRound"
-length = 3.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5, 3 ),
-"transitions": PoolRealArray( 1, 0.392292, 1.93187 ),
-"update": 0,
-"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.31, 0.31 ), Vector2( 0.3, 0.3 ) ]
-}
+[ext_resource path="res://global/Camera2D.tscn" type="PackedScene" id=3]
 
 [node name="PlayerAndCamera" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 light_mask = 0
-position = Vector2( 867, 666.667 )
-
-[node name="Light2D" type="Light2D" parent="Player"]
-show_behind_parent = true
-light_mask = 3
-scale = Vector2( 0.3, 0.3 )
-z_index = -1
-z_as_relative = false
-texture = ExtResource( 2 )
-color = Color( 0.290196, 0.290196, 0.290196, 1 )
-mode = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Light2D"]
-autoplay = "LightRound"
-anims/LightRound = SubResource( 1 )
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( -0.685333, -0.11084 )
-current = true
-zoom = Vector2( 4, 4 )
-drag_margin_left = 0.0
-drag_margin_top = 0.0
-drag_margin_right = 0.0
-drag_margin_bottom = 0.0
-
-[node name="Narator" parent="Player/Camera2D" instance=ExtResource( 3 )]
-scroll_active = false
+position = Vector2( -0.94043, -3.2572 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
 modulate = Color( 0.105882, 0.105882, 0.105882, 1 )
-position = Vector2( 8.58945, -21.4558 )
-scale = Vector2( 2.04514, -1.70711 )
+position = Vector2( -11.4351, -0.603107 )
+scale = Vector2( 2, 2 )
 z_index = -1
 texture = ExtResource( 2 )
+
+[node name="Camera2D" parent="Player" instance=ExtResource( 3 )]
