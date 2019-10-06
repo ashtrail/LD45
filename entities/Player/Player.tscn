@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://entities/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://entities/Player/player.png" type="Texture" id=2]
@@ -9,14 +9,9 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.83532
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 10.5898
-
-[sub_resource type="ConvexPolygonShape2D" id=3]
-
-[sub_resource type="CapsuleShape2D" id=3]
-radius = 13.4316
-height = 34.3047
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 13.1025
+height = 25.2533
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
@@ -37,21 +32,16 @@ shape = SubResource( 1 )
 [node name="FlashLight" type="Node2D" parent="."]
 
 [node name="Light" type="Area2D" parent="FlashLight" groups=[
-"light_cone",
 "flash_light",
+"light_cone",
 ]]
 position = Vector2( -0.369537, 1.13623 )
 rotation = -1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FlashLight/Light"]
-position = Vector2( 0, 275.39 )
-scale = Vector2( 7, 7 )
-shape = SubResource( 2 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="FlashLight/Light"]
-position = Vector2( -0.869837, 168.118 )
-scale = Vector2( 7.91963, 15.6269 )
-shape = SubResource( 3 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FlashLight/Light"]
+position = Vector2( 3.03684, 22.8258 )
+scale = Vector2( -3.01599, 1.94234 )
+polygon = PoolVector2Array( -45.7886, 204.673, -0.346589, -2.99771, 42.0074, 208.423, 39.0827, 242.106, 26.4087, 266.327, 16.4157, 279.195, 2.03547, 280.709, -15.2695, 273.518, -27.4562, 263.679, -35.9869, 252.703, -46.4674, 216.371 )
 
 [node name="Node2D" parent="FlashLight" instance=ExtResource( 3 )]
 
@@ -61,15 +51,14 @@ scale = Vector2( 0.5, 0.5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
-position = Vector2( -0.716965, 1.43394 )
+position = Vector2( -0.568817, 5.68799 )
 scale = Vector2( 2, 2 )
 z_index = -1
 texture = ExtResource( 5 )
-position = Vector2( -0.568817, 5.68799 )
 
 [node name="AreaTrigeredByEnemy" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTrigeredByEnemy"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [connection signal="area_entered" from="AreaTrigeredByEnemy" to="." method="_on_AreaTrigeredByEnemy_area_entered"]
