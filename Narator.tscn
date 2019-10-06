@@ -3,7 +3,9 @@
 [ext_resource path="res://entities/UIMessage/Existence-Light.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Narator.gd" type="Script" id=2]
 
-[node name="RichTextLabel" type="RichTextLabel"]
+[node name="RichTextLabel" type="RichTextLabel" groups=[
+"narator",
+]]
 light_mask = 0
 margin_left = -500.0
 margin_top = -244.0
@@ -15,3 +17,6 @@ bbcode_enabled = true
 bbcode_text = "[center]Hi...."
 text = "Hi...."
 script = ExtResource( 2 )
+
+[node name="GodSpeaker" type="AudioStreamPlayer" parent="."]
+

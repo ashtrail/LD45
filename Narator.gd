@@ -22,8 +22,15 @@ func _process(delta):
 			textIndex += 1
 	pass
 
-func _appendText(var appenedText):
-	newText = appenedText
+
+func _appendText(var appened_text: String, var path_to_audio: String = ""):
+	newText = appened_text
 	textIndex = 0
 	bbcode_text = "[center]"
-	pass
+	if !path_to_audio.empty():
+		var sfx = load(path_to_audio) 
+		sfx.set_loop(false)
+		$GodSpeaker.stop()
+		$GodSpeaker.set_stream(sfx)
+		$GodSpeaker.play()
+	
