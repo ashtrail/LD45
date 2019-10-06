@@ -30,16 +30,17 @@ func _process(delta):
 		if progression > TIME_TO_ACTIVATION: 
 			if signal_to_emit.length() != 0:
 				get_parent().emit_signal(signal_to_emit)
+			$Light2D/Area2D.add_to_group("light_area", true)
 			triggered = true
 
 
 func _on_Area2D_area_entered(area):
-	if !triggered && area.is_in_group("light_cone"):
+	if !triggered && (area.is_in_group("light_area") || area.is_in_group("flash_light")):
 		$Light2D.set_enabled(true)
 		enlightened = true
 
 
 func _on_Area2D_area_exited(area):
-	if !triggered && area.is_in_group("light_cone"):
+	if !triggered && (area.is_in_group("light_area") || area.is_in_group("flash_light")):
 		$Light2D.set_enabled(false)
 		enlightened = false

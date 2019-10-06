@@ -20,10 +20,10 @@ func _process(delta):
 	position += motion
 
 func _on_Area2D_area_entered(area):
-	if area.is_in_group("light_cone"):
+	if area.is_in_group("light_area") || area.is_in_group("flash_light"):
 		triggered = true
 
 
 func _on_Area2D_area_exited(area):
-	if area.is_in_group("light_cone"):
+	if area.is_in_group("light_area") || area.is_in_group("flash_light"):
 		triggered = false

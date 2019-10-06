@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://levels/Demo3TriggerDoor/Demo3TriggerDoor.gd" type="Script" id=1]
 [ext_resource path="res://entities/Trigger/Trigger.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/Door/Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/PlayerAndCamera/PlayerAndCamera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://levels/GhostsPatrols/GhostsPatrols.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 311.421, 113.105, 0, 0, 0, 0, 278.832, 645.552, 0, 0, 0, 0, -14.2774, 596.469, 0, 0, 0, 0, 18.7895, 33.1053, 0, 0, 0, 0, 269.316, 98.3684, 0, 0, 0, 0, 311.421, 114.158 )
+}
 
 [node name="Demo3TriggerDoor" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,6 +20,15 @@ position = Vector2( 140.095, 368.971 )
 [node name="Trigger2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 429.245, 370.6 )
 
+[node name="Trigger4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 957.666, 268.495 )
+
+[node name="Trigger5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 856.613, 130.6 )
+
+[node name="Trigger6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 670.297, 92.7052 )
+
 [node name="Trigger3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 699.66, 374.673 )
 
@@ -21,6 +36,12 @@ position = Vector2( 699.66, 374.673 )
 position = Vector2( 426.115, 66.0178 )
 
 [node name="PlayerAndCamera" parent="." instance=ExtResource( 4 )]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="GhostsPatrols" parent="Path2D" instance=ExtResource( 5 )]
+position = Vector2( 311.421, 113.105 )
 
 [connection signal="trigger1" from="." to="." method="_on_trigger"]
 [connection signal="trigger2" from="." to="." method="_on_trigger"]
