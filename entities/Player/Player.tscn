@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://entities/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://entities/Player/player.png" type="Texture" id=2]
-[ext_resource path="res://entities/LightHandler/Fog_of_war.png" type="Texture" id=3]
-[ext_resource path="res://entities/LightHandler/LightHandling.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/LightHandler/LightHandling.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -37,11 +36,5 @@ position = Vector2( -3.25959, 298.605 )
 scale = Vector2( 23.7849, 29.3086 )
 shape = SubResource( 2 )
 
-[node name="Cone" type="Sprite" parent="FlashLight/Light"]
-position = Vector2( 2.80109, -23.5299 )
-rotation = 1.5708
-scale = Vector2( 18.421, -21.4173 )
-texture = ExtResource( 3 )
-
-[node name="Node2D" parent="FlashLight" instance=ExtResource( 4 )]
+[node name="Node2D" parent="FlashLight" instance=ExtResource( 3 )]
 position = Vector2( -0.0516109, 1.15967 )
