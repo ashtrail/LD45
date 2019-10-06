@@ -8,18 +8,18 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Light2D3" type="Light2D" parent="."]
-position = Vector2( 249.393, -16.5929 )
-scale = Vector2( 0.429823, 0.451932 )
+position = Vector2( 248.121, -1.4702 )
+scale = Vector2( 0.438953, 0.402994 )
 texture = ExtResource( 1 )
 mode = 2
 
 [node name="Light2D2" type="Light2D" parent="."]
-scale = Vector2( 0.244505, 0.24322 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 mode = 2
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( -0.404053, 5.95935 )
+position = Vector2( 1.30235, 0.271346 )
 scale = Vector2( 7.8, 4.51471 )
 texture = ExtResource( 3 )
 energy = 0.01
@@ -28,7 +28,7 @@ mode = 3
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.443137, 0.443137, 0.443137, 1 )
 light_mask = 0
-position = Vector2( -3.93613, 2.61276 )
+position = Vector2( 0.200207, 1.79828 )
 scale = Vector2( 1.72, 2.52 )
 z_index = -1
 texture = ExtResource( 4 )

@@ -24,7 +24,8 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
-scale = Vector2( 0.160001, -0.280001 )
+position = Vector2( 4.99999, 0.45126 )
+scale = Vector2( 0.136778, -0.204167 )
 texture = ExtResource( 3 )
 color = Color( 0.309804, 0.309804, 0.309804, 1 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

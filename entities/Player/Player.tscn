@@ -24,21 +24,24 @@ scale = Vector2( 2.44, 2.48 )
 shape = SubResource( 1 )
 
 [node name="FlashLight" type="Node2D" parent="."]
-position = Vector2( 5.01746, 13.798 )
+position = Vector2( 0.235241, -0.0158501 )
 
 [node name="Light" type="Area2D" parent="FlashLight" groups=[
 "light_cone",
 ]]
+position = Vector2( -0.0460062, 0.16563 )
 rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FlashLight/Light"]
-position = Vector2( 10.053, 292.918 )
+position = Vector2( -3.25959, 298.605 )
 scale = Vector2( 23.7849, 29.3086 )
 shape = SubResource( 2 )
 
 [node name="Cone" type="Sprite" parent="FlashLight/Light"]
-visible = false
+position = Vector2( 2.80109, -23.5299 )
 rotation = 1.5708
+scale = Vector2( 18.421, -21.4173 )
 texture = ExtResource( 3 )
 
 [node name="Node2D" parent="FlashLight" instance=ExtResource( 4 )]
+position = Vector2( -0.0516109, 1.15967 )
