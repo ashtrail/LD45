@@ -32,6 +32,7 @@ func _process(delta):
 				get_parent().emit_signal(signal_to_emit)
 			$Light2D/Area2D.add_to_group("light_area", true)
 			triggered = true
+			Global.respawn_position = self.get_global_position()
 
 
 func _on_Area2D_area_entered(area):

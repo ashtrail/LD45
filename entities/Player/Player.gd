@@ -5,6 +5,7 @@ var movement
 
 func _ready():
 	$Camera2D/Narator._appendText("Bonjour, ça va ? Moi non...\n J'ai mal a mon estime de moi...")
+	Global.respawn_position = self.get_global_position()
 	pass
 
 func _process(delta):
@@ -26,5 +27,7 @@ func _process(delta):
 
 func _on_AreaTrigeredByEnemy_area_entered(area):
 	if area.is_in_group("enemy"):
+		self.position = Global.respawn_position
+		$AudioStreamPlayer.play()
 		print("Hit by an enemy")
 	pass # Replace with function body.

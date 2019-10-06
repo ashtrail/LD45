@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://entities/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://entities/Player/player.png" type="Texture" id=2]
 [ext_resource path="res://entities/LightHandler/LightHandling.tscn" type="PackedScene" id=3]
 [ext_resource path="res://global/Camera2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://entities/LightHandler/round_mask.png" type="Texture" id=5]
+[ext_resource path="res://entities/Player/Aie.ogg" type="AudioStream" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.83532
@@ -60,5 +61,8 @@ texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTrigeredByEnemy"]
 shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="area_entered" from="AreaTrigeredByEnemy" to="." method="_on_AreaTrigeredByEnemy_area_entered"]
