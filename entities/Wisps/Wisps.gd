@@ -19,7 +19,7 @@ func _process(delta):
 	if (!triggered): 
 		return
 
-	var direction = (player.position - position).normalized()
+	var direction = (player.get_global_position() - position).normalized()
 	var motion = direction * SPEED * delta
 	position += motion
 
