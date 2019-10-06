@@ -1,0 +1,16 @@
+En principe, les 4 pistes tournent sans arrêt. 
+
+Elles ont toutes exactement la même durée: 3m13s846ms
+
+Pour le loop: À (si possible, ou valeur la plus proche) 3m06s461ms, relancer sur un autre canal audio (risque de clic si les musiques se relancent sur elle-même)
+
+
+
+La piste neutre (M01-Neutre) est toujours audible, et la localisation du joueur par rapport aux zones influe sur le volume des pistes:
+- M01-Cimetiere
+- M01-Foret
+- M01-Plaine
+
+À vous de décider de la gestion du volume/ des transitions entre les pistes, la musique à été composée pour que ces changements soient très discrets 
+(donc en somme, ne vous prenez pas trop la tête ! ;D)
+

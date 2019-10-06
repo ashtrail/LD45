@@ -1,0 +1,19 @@
+ATTENTION: CES BRUITAGES SONT NORMALIZÉS (SONT A LEUR POTENTIEL DE dB MAXIMUM, ATTENTION A VOS OREILLES QUAND VOUS LES ECOUTEZ)
+
+
+
+10 Bruitages différents à lancer aléatoirement (une alarme/horloge peut aussi être utilisée, pas si important pour la cadence des bruitages)
+
+De préférence orienter le pan des bruitages en fonction de la position du fantome, mais je suppose que dans le cas ou plusieurs fantomes seraient présents,
+ca serait compliqué, à moins de balancer encore plus de bruitages en même temps ... c'est vous qui voyez :D 
+
+L'idée serait de réduire (légèrerment) le volume de la musique à mesure que le joueur se rapproche d'un fantome, et de monter le volume des Br-Fantome, 
+pour deux raisons:
+
+1. ==> C'est cool
+2. ==> Éviter la saturation en volume avec la musique (avec cette gestion du volume, la musique et ces bruitages ne seront jamais à plein volume en même temps,
+	ce qui évite une saturation interne dans le moteur audio de Godot
+
+
+Si le joueur est au plus près d'un fantome, pourquoi pas écraser complètement la musique ! Ca foutra les chocottes au joueur, qui n'entendra plus une
+seule note de musique s'il est en danger :D
