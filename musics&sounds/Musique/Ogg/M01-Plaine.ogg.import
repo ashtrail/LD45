@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/M01-Plaine.ogg-f9412139fb3ea45dae030bd1ff5c143b.oggstr"
+
+[deps]
+
+source_file="res://musics&sounds/Musique/Ogg/M01-Plaine.ogg"
+dest_files=[ "res://.import/M01-Plaine.ogg-f9412139fb3ea45dae030bd1ff5c143b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=186.461

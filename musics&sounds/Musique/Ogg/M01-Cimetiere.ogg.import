@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/M01-Cimetiere.ogg-0bafd138274e1a0b317b9142b3fc500c.oggstr"
+
+[deps]
+
+source_file="res://musics&sounds/Musique/Ogg/M01-Cimetiere.ogg"
+dest_files=[ "res://.import/M01-Cimetiere.ogg-0bafd138274e1a0b317b9142b3fc500c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=186.461

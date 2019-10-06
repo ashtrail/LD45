@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/M01-Foret.ogg-f678f604051676779ebfe9fa527054ff.oggstr"
+
+[deps]
+
+source_file="res://musics&sounds/Musique/Ogg/M01-Foret.ogg"
+dest_files=[ "res://.import/M01-Foret.ogg-f678f604051676779ebfe9fa527054ff.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=186.461

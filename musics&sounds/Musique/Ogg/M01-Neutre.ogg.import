@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/M01-Neutre.ogg-534c99145769d4d254df10f4cb1d419b.oggstr"
+
+[deps]
+
+source_file="res://musics&sounds/Musique/Ogg/M01-Neutre.ogg"
+dest_files=[ "res://.import/M01-Neutre.ogg-534c99145769d4d254df10f4cb1d419b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=186.461
