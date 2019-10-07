@@ -16,12 +16,20 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if rand_range(0.0, 1.0) < 0.001:
+		var sfx = Global.ghost_sounds[randi() % Global.ghost_sounds.size()]
+		$AudioStreamPlayer2D.stop()
+		$AudioStreamPlayer2D.set_stream(sfx)
+		$AudioStreamPlayer2D.play()
 	if (!triggered): 
 		return
 
 	var direction = (player.get_global_position() - self.get_global_position()).normalized()
 	var motion = direction * SPEED * delta
 	position += motion
+	
+
+
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("light_area"): nbr_light_area += 1

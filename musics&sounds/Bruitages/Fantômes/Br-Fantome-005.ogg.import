@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Br-Fantome-005.ogg-49c1b13cd616397b299b1b4cc26dcec8.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
