@@ -20,3 +20,8 @@ script = ExtResource( 2 )
 
 [node name="GodSpeaker" type="AudioStreamPlayer" parent="."]
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
