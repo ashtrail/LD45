@@ -33,7 +33,7 @@ drag_margin_bottom = 0.0
 margin_left = -490.898
 margin_top = -271.245
 margin_right = 509.102
-margin_bottom = -189.245
+margin_bottom = 40.0
 scroll_active = false
 
 [node name="Light2D" type="Light2D" parent="."]

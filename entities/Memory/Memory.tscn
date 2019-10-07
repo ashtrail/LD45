@@ -31,5 +31,6 @@ color_ramp = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( -0.397217, 0 )
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
 energy = 0.2
