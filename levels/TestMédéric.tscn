@@ -2288,6 +2288,7 @@ position = Vector2( 3892.5, 3990 )
 forest_position = Vector2( 2760, 1037 )
 cimetery_position = Vector2( 5480, 2030 )
 plain_position = Vector2( 3574, 3400 )
+
 [connection signal="trigger1" from="ZoneTuto" to="ZoneTuto" method="_on_trigger"]
 [connection signal="trigger2" from="ZoneTuto" to="ZoneTuto" method="_on_trigger"]
 [connection signal="trigger3" from="ZoneTuto" to="ZoneTuto" method="_on_trigger"]
