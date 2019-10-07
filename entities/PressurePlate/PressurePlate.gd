@@ -1,11 +1,11 @@
 extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal pressed
+
 export var text_to_trigger: String
 export var path_to_audio_speaker: String = ""
 var narator
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	narator = get_tree().get_nodes_in_group("narator")[0]
@@ -19,6 +19,7 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		call_deferred("function_to_delay")
+		emit_signal("pressed")
 	pass # Replace with function body.
 
 func function_to_delay():
