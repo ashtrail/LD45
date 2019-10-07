@@ -2,7 +2,7 @@ extends Node2D
 
 signal pressed
 
-export var text_to_trigger: String
+export var text_to_trigger # string or array of strings
 export var path_to_audio_speaker: String = ""
 var narator
 
@@ -24,7 +24,11 @@ func _on_Area2D_body_entered(body):
 
 func function_to_delay():
 		if path_to_audio_speaker.empty():
-			narator._appendText(text_to_trigger.c_unescape())
+			if typeof(text_to_trigger) == TYPE_ARRAY:
+				for line in text_to_trigger:
+					narator._appendText(line.c_unescape())
+			else:
+				narator._appendText(text_to_trigger.c_unescape())
 		else:
 			narator._appendText(text_to_trigger.c_unescape(), path_to_audio_speaker)
 		get_parent().remove_child(self)

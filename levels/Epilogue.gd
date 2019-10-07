@@ -16,7 +16,9 @@ func _ready():
 	for i in range(7):
 		var memory_index = i + 1
 		if memories_found.find(memory_index) != -1:
-			memories_text += Global.memories[memory_index].text
+			for line in Global.memories[memory_index].text:
+				memories_text += line
+			# memories_text += Global.memories[memory_index].text
 		else:
 			memories_text += "[...]"
 		memories_text += "\n\n"
