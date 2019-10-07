@@ -37,7 +37,7 @@ var memories = {
 		"karma": -1
 	},
 	5: {
-		"text": ["Several months have passed since Billy's escapade.\nAs days go by he can't stop thinking about his girlfriend and their child.", "When he comes back, ready to face his responsibilities,\nhe learns his girlfriend has committed suicide after sinking into a deep depression and their daughter is gone, adopted."],
+		"text": ["Several months have passed since Billy's escapade.\nAs days go by he can't stop thinking about his girlfriend and their child.", "When he comes back, ready to face his responsibilities,\nhe learns his girlfriend has committed suicide after sinking into a deep depression\nand their daughter is gone, adopted."],
 		"karma": 0
 	},
 	6: {

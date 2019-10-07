@@ -7,7 +7,7 @@ var angle
 var texture = load("res://entities/Player/billy_iddle.png")
 
 func _ready():
-	$Camera2D/Narator._appendText("Bonjour, ça va ? Moi non...\n J'ai mal a mon estime de moi...")
+	$Camera2D/Narator._appendText("Billy wakes up in an unknown land.\nHis mind is blank, he can't remember anything.\nHe picks up a torchlight on the ground\nand tries to find other sources of light and his lost memories.")
 	Global.respawn_position = self.get_global_position()
 	pass
 
