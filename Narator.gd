@@ -10,31 +10,18 @@ var current_text: String
 func _ready():
 	current_text = "BEBE TES OU"
 	bbcode_text = "[center]" + current_text
+	visible_characters = 0
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	
-	if textIndex < current_text.length() && $Timer.is_stopped():
-		timer += 1
-		if timer % 10 == 0:
-			bbcode_text += current_text[textIndex]
-			textIndex += 1
-		return
-	
-	if textIndex == current_text.length():
-		if $Timer.is_stopped():
-			$Timer.start()
-
-	pass
+#func _process(delta):
+	#pass
 
 
 func _appendText(var appened_text: String, var path_to_audio: String = ""):
-	if current_text.empty():
-		bbcode_text = "[center]"
-		current_text = appened_text
-	else:
-		queue.append(appened_text)
+	print(appened_text)
+
+	queue.append(appened_text)
 	if !path_to_audio.empty():
 		var sfx = load(path_to_audio) 
 		sfx.set_loop(false)
@@ -44,9 +31,9 @@ func _appendText(var appened_text: String, var path_to_audio: String = ""):
 	
 
 
-func _on_Timer_timeout():
-	$Timer.stop()
-	textIndex = 0
+func _on_TimerEraseText_timeout():
+	$TimerEraseText.stop()
+	visible_characters = 0
 	if queue.size() > 0:
 		current_text = queue.front()
 		bbcode_text = "[center]"
@@ -57,3 +44,19 @@ func _on_Timer_timeout():
 		bbcode_text = "[center]"
 		
 	
+
+
+func _on_TimerShowLetter_timeout():
+	if current_text.empty():
+		bbcode_text = ""
+	else:
+		bbcode_text = "[center]" + current_text
+
+	if visible_characters == current_text.length():
+		if $TimerEraseText.is_stopped():
+			$TimerEraseText.start()
+	elif !current_text.empty() && visible_characters < bbcode_text.length() && $TimerEraseText.is_stopped():
+		visible_characters += 1
+	else:
+		visible_characters = 0
+
