@@ -17,7 +17,7 @@ var ghost_sounds =  [
 ]
 
 var karma : int = 0
-var memories_found := [1, 2, 3] # array of memory indexes
+var memories_found := [] # array of memory indexes
 
 var memories = {
 	1: {
@@ -49,3 +49,14 @@ var memories = {
 		"karma": 0
 	}
 }
+
+func add_memory(memory_index):
+	var memory = memories[memory_index]
+	karma += memory.karma
+	memories_found.append(memory_index)
+
+func number_of_memory_found():
+	return memories_found.size()
+
+func get_memory_text(memory_index):
+	return memories[memory_index].text
