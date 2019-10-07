@@ -8,6 +8,7 @@ radius = 47.7402
 
 [node name="Wisps" type="Node2D"]
 script = ExtResource( 1 )
+SPEED = 130.0
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 4.57764e-005, 0.290394 )

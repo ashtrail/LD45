@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://entities/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://entities/Player/billy_iddle.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://entities/Player/Aie.ogg" type="AudioStream" id=6]
 [ext_resource path="res://entities/Player/billy_left_step_head_bob.png" type="Texture" id=7]
 [ext_resource path="res://entities/Player/billy_right_step_head_bob.png" type="Texture" id=8]
+[ext_resource path="res://entities/Player/DeathScreen.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.83532
@@ -33,6 +34,38 @@ tracks/0/keys = {
 "values": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 2 ) ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "DeathAnimation"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("DeathSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "FadeOut"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("DeathSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
@@ -50,6 +83,7 @@ scale = Vector2( 2.44, 2.48 )
 shape = SubResource( 1 )
 
 [node name="FlashLight" type="Node2D" parent="."]
+scale = Vector2( 0.639999, 0.84 )
 
 [node name="Light" type="Area2D" parent="FlashLight" groups=[
 "light_cone",
@@ -86,4 +120,13 @@ stream = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Walking = SubResource( 3 )
+
+[node name="Death" type="AnimationPlayer" parent="."]
+anims/DeathAnimation = SubResource( 4 )
+anims/FadeOut = SubResource( 5 )
+
+[node name="DeathSprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+z_index = 2000
+texture = ExtResource( 9 )
 [connection signal="area_entered" from="AreaTrigeredByEnemy" to="." method="_on_AreaTrigeredByEnemy_area_entered"]

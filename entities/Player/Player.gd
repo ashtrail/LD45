@@ -43,7 +43,10 @@ func _process(delta):
 
 func _on_AreaTrigeredByEnemy_area_entered(area):
 	if area.is_in_group("enemy"):
-		self.position = Global.respawn_position
 		$AudioStreamPlayer.play()
+		$Death.play("DeathAnimation")
+		yield($Death, "animation_finished")
+		self.position = Global.respawn_position + Vector2(0, 200)
+		$Death.play("FadeOut")
 		print("Hit by an enemy")
 	pass # Replace with function body.
