@@ -11,5 +11,4 @@ script = ExtResource( 1 )
 
 [node name="PressurePlate" parent="." instance=ExtResource( 3 )]
 scale = Vector2( 0.75, 0.75 )
-
 [connection signal="pressed" from="PressurePlate" to="." method="_on_PressurePlate_pressed"]
