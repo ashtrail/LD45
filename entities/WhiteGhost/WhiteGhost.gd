@@ -16,7 +16,7 @@ func is_triggered():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if rand_range(0.0, 1.0) < 0.001:
+	if rand_range(0.0, 1.0) < 0.0005:
 		var sfx = Global.ghost_sounds[randi() % Global.ghost_sounds.size()]
 		$AudioStreamPlayer2D.stop()
 		$AudioStreamPlayer2D.set_stream(sfx)
