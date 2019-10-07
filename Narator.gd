@@ -8,7 +8,8 @@ var current_text: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	current_text = "BEBE TES OU"
+#	current_text = "BEBE TES OU"
+	current_text = ""
 	bbcode_text = "[center]" + current_text
 	visible_characters = 0
 	pass # Replace with function body.
