@@ -29,15 +29,15 @@ var memories = {
 		"karma": -1
 	},
 	3: {
-		"text": ["As his life seems spiraling into more and more violence, Billy meets a girl.", "They fall in love.\nHe decides to stop his criminal activities,\nthey move and he gets a stable office job."],
+		"text": ["As his life seems spiralling into more and more violence, Billy meets a girl.", "They fall in love.\nHe decides to stop his criminal activities,\nthey move and he gets a stable office job."],
 		"karma": 1
 	},
 	4: {
-		"text": ["Billy's office job is slow and dull torture.\nHis peaceful and monotous life is making him jittery.", "When his girlfriend shows him a positive pregnancy test he snaps.", "Terrified at the idea of ending up like his father,\nhe flees to another state without her."],
+		"text": ["Billy's office job is slow and dull torture.\nHis peaceful and monotonous life is making him jittery.", "When his girlfriend shows him a positive pregnancy test he snaps.", "Terrified at the idea of ending up like his father,\nhe flees to another state without her."],
 		"karma": -1
 	},
 	5: {
-		"text": ["Several months have passed since Billy's escapade.\nAs days go by he can't stop thinking about his girlfriend and their child.", "When he comes back, ready to face his responsabilities,\nhe learns his girlfriend has committed suicide after sinking into a deep depression and their daughter is gone, adopted."],
+		"text": ["Several months have passed since Billy's escapade.\nAs days go by he can't stop thinking about his girlfriend and their child.", "When he comes back, ready to face his responsibilities,\nhe learns his girlfriend has committed suicide after sinking into a deep depression and their daughter is gone, adopted."],
 		"karma": 0
 	},
 	6: {
