@@ -1820,7 +1820,6 @@ polygon = PoolVector2Array( 560, -1650, 540, -2050, 950, -2050, 1010, -1960, 146
 position = Vector2( 3300, 2080 )
 
 [node name="ZoneTuto" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 120, -50 )
 script = ExtResource( 12 )
 
@@ -2243,6 +2242,7 @@ position = Vector2( 2720, 3903 )
 position = Vector2( 3533, 3830 )
 
 [node name="Path2D3" type="Path2D" parent="ZoneTuto"]
+editor/display_folded = true
 position = Vector2( 607.5, 95 )
 curve = SubResource( 9 )
 
@@ -2263,6 +2263,7 @@ offset = 1043.8
 SPEED = 150
 
 [node name="Path2D2" type="Path2D" parent="ZoneTuto"]
+editor/display_folded = true
 curve = SubResource( 10 )
 
 [node name="GhostsPatrols" parent="ZoneTuto/Path2D2" instance=ExtResource( 6 )]
@@ -2270,6 +2271,7 @@ position = Vector2( 2552.5, 3592.5 )
 SPEED = 150
 
 [node name="Path2D" type="Path2D" parent="ZoneTuto"]
+editor/display_folded = true
 position = Vector2( 15, 87.5 )
 curve = SubResource( 11 )
 

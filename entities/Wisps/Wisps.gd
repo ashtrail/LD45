@@ -16,11 +16,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if rand_range(0.0, 1.0) < 0.0005:
-		var sfx = Global.ghost_sounds[randi() % Global.ghost_sounds.size()]
-		$AudioStreamPlayer2D.stop()
-		$AudioStreamPlayer2D.set_stream(sfx)
-		$AudioStreamPlayer2D.play()
 	if (!triggered): 
 		return
 
@@ -43,3 +38,12 @@ func _on_Area2D_area_exited(area):
 	elif area.is_in_group("flash_light"): nbr_flash_light -=1
 	if nbr_flash_light + nbr_light_area < 1:
 		triggered = false
+
+
+func _on_TimerSound_timeout():
+	if rand_range(0.0, 1.0) < 0.1:
+		var sfx = Global.ghost_sounds[randi() % Global.ghost_sounds.size()]
+		$AudioStreamPlayer2D.stop()
+		$AudioStreamPlayer2D.set_stream(sfx)
+		$AudioStreamPlayer2D.play()
+	pass # Replace with function body.

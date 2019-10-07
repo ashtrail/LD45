@@ -11,7 +11,7 @@ script = ExtResource( 1 )
 SPEED = 130.0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 4.57764e-05, 0.290394 )
+position = Vector2( 4.57764e-005, 0.290394 )
 scale = Vector2( 0.291472, 0.311311 )
 texture = ExtResource( 2 )
 
@@ -25,5 +25,11 @@ shape = SubResource( 1 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 volume_db = -4.829
 max_distance = 500.0
+
+[node name="TimerSound" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="timeout" from="TimerSound" to="." method="_on_TimerSound_timeout"]

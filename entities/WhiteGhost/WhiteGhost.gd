@@ -16,11 +16,7 @@ func is_triggered():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if rand_range(0.0, 1.0) < 0.0005:
-		var sfx = Global.ghost_sounds[randi() % Global.ghost_sounds.size()]
-		$AudioStreamPlayer2D.stop()
-		$AudioStreamPlayer2D.set_stream(sfx)
-		$AudioStreamPlayer2D.play()
+	pass
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("light_area"): nbr_light_area += 1
@@ -36,3 +32,10 @@ func _on_Area2D_area_exited(area):
 	if nbr_flash_light + nbr_light_area < 1:
 		$Sprite.texture = normalGhost
 		triggered = false
+
+func _on_TimerSound_timeout():
+	if rand_range(0.0, 1.0) < 0.1:
+		var sfx = Global.ghost_sounds[randi() % Global.ghost_sounds.size()]
+		$AudioStreamPlayer2D.stop()
+		$AudioStreamPlayer2D.set_stream(sfx)
+		$AudioStreamPlayer2D.play()
