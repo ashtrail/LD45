@@ -37,4 +37,4 @@ func _process(delta):
 	$Forest.set_volume_db(compute_volume_base_on_distance(distance_to_forest()))
 	$Cimetery.set_volume_db(compute_volume_base_on_distance(distance_to_cimetery()))
 	$Plain.set_volume_db(compute_volume_base_on_distance(distance_to_plain()))
-	print($Forest.get_volume_db(), $Cimetery.get_volume_db(), $Plain.get_volume_db())
+
