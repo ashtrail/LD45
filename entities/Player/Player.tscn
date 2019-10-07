@@ -79,6 +79,7 @@ texture = ExtResource( 2 )
 flip_h = true
 
 [node name="CollisionShapePhysic" type="CollisionShape2D" parent="."]
+position = Vector2( 0.323532, 5.50006 )
 scale = Vector2( 2.44, 2.48 )
 shape = SubResource( 1 )
 

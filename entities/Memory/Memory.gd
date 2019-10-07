@@ -14,6 +14,7 @@ func _ready():
 
 func stop_particles():
 	$Particles2D.set_emitting(false)
+	$AudioStreamPlayer.play()
 
 func stop_light():
 	$Light2D.set_enabled(false)

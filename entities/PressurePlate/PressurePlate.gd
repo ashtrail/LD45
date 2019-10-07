@@ -2,7 +2,7 @@ extends Node2D
 
 signal pressed
 
-export var text_to_trigger # string or array of strings
+export var text_to_trigger = [] # string or array of strings
 export var path_to_audio_speaker: String = ""
 var narator
 

@@ -4,7 +4,7 @@
 [ext_resource path="res://entities/Gate/gate.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64.2142, 94.1656 )
+extents = Vector2( 90.757, 105.799 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 118.718, 40.4187 )
@@ -22,12 +22,16 @@ __meta__ = {
 }
 
 [node name="Door" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2( -0.757019, 45.7985 )
 shape = SubResource( 1 )
 
 [node name="Front" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Front"]
 position = Vector2( 5.29904, 184.708 )
@@ -37,4 +41,6 @@ shape = SubResource( 2 )
 wait_time = 30.0
 one_shot = true
 [connection signal="area_entered" from="Door" to="." method="_on_Door_area_entered"]
+[connection signal="body_entered" from="Door" to="." method="_on_Door_body_entered"]
 [connection signal="area_entered" from="Front" to="." method="_on_Front_area_entered"]
+[connection signal="body_entered" from="Front" to="." method="_on_Front_body_entered"]
