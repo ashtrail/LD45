@@ -36,13 +36,13 @@ position = Vector2( 699.66, 374.673 )
 position = Vector2( 426.115, 66.0178 )
 
 [node name="PlayerAndCamera" parent="." instance=ExtResource( 4 )]
+visible = false
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource( 1 )
 
 [node name="GhostsPatrols" parent="Path2D" instance=ExtResource( 5 )]
 position = Vector2( 311.421, 113.105 )
-
 [connection signal="trigger1" from="." to="." method="_on_trigger"]
 [connection signal="trigger2" from="." to="." method="_on_trigger"]
 [connection signal="trigger3" from="." to="." method="_on_trigger"]

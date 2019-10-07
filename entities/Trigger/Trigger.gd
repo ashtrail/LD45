@@ -39,9 +39,11 @@ func _on_Area2D_area_entered(area):
 	if !triggered && (area.is_in_group("light_area") || area.is_in_group("flash_light")):
 		$Light2D.set_enabled(true)
 		enlightened = true
+		$AnimationPlayer.play("LightSwitchOn")
 
 
 func _on_Area2D_area_exited(area):
 	if !triggered && (area.is_in_group("light_area") || area.is_in_group("flash_light")):
 		$Light2D.set_enabled(false)
 		enlightened = false
+		$AnimationPlayer.stop()
