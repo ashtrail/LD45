@@ -12,19 +12,19 @@ func _ready():
 
 func open():
 	if is_opened: pass
-	self.free()
-	
+	call_deferred("free")
+
 	is_opened = true
 	$StaticBody2D/CollisionShape2D.set_disabled(true)
 	$Sprite.set_texture(load("res://entities/Door/opened_door.jpg"))
-	
+
 func close():
 	if !is_opened: pass
-	
+
 	is_opened = false
 	$StaticBody2D/CollisionShape2D.set_disabled(false)
 	$Sprite.set_texture(load("res://entities/Door/closed_door.jpg"))
-	
+
 func _on_switch_signal():
 	switch()
 
